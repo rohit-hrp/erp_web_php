@@ -1,0 +1,57 @@
+<?php require_once "layouts/header.php"; ?>
+
+<!-- service section -->
+<section class="service_section layout_padding">
+    <div class="container ">
+        <div class="heading_container heading_center">
+            <h2> Login </h2>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <form>
+                    <!-- Email input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <label class="form-label" for="form2Example1">Email address:</label>
+                        <input type="email" id="form2Example1" class="form-control" />
+
+                    </div>
+
+                    <!-- Password input -->
+                    <div data-mdb-input-init class="form-outline mb-4">
+                        <label class="form-label" for="form2Example2">Password:</label>
+                        <input type="password" id="form2Example2" class="form-control" />
+
+                    </div>
+
+                    <!-- 2 column grid layout for inline styling -->
+                    <div class="row mb-4">
+                        <div class="col d-flex justify-content-center">
+                            <!-- Checkbox -->
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                                <label class="form-check-label" for="form2Example31"> Remember me </label>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <!-- Simple link -->
+                            <a href="#!">Forgot password?</a>
+                        </div>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sign in</button>
+
+                    <!-- Register buttons -->
+                    <div class="text-center">
+                        <p>Not a member? <a href="signup.php">Register</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- end service section -->
+
+<?php require_once "layouts/footer.php"; ?>
