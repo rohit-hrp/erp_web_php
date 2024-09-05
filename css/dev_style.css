@@ -1,0 +1,9 @@
+input.error {
+    border: 2px solid red;
+  }
+
+  /* Optional: Style the error message */
+  label.error {
+    color: red;
+    font-size: 12px;
+  }

@@ -9,18 +9,18 @@
     </div>
         <div class="row">
             <div class="col-md-6 mx-auto">
-                <form>
+            <form id="loginForm" method="post" action="/login">
                     <!-- Email input -->
                     <div data-mdb-input-init class="form-outline mb-4">
                         <label class="form-label" for="form2Example1">Email address</label>
-                        <input type="email" id="form2Example1" class="form-control" />
+                        <input type="email" id="form2Example1" class="form-control" name="emil"/>
                         
                     </div>
 
                     <!-- Password input -->
                     <div data-mdb-input-init class="form-outline mb-4">
                         <label class="form-label" for="form2Example2">Password</label>
-                        <input type="password" id="form2Example2" class="form-control" />
+                        <input type="password" id="form2Example2" class="form-control" name="password"/>
                         
                     </div>
 
@@ -41,11 +41,11 @@
                     </div>
 
                     <!-- Submit button -->
-                    <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sign in</button>
+                    <button  type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sign in</button>
 
                     <!-- Register buttons -->
                     <div class="text-center">
-                        <p>Not a member? <a href="#!">Register</a></p>
+                        <p>Not a member? <a href="#!">Signup</a></p>
                         <p>or sign up with:</p>
                         <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-link btn-floating mx-1">
                         <i class="fab fa-facebook-f"></i>
