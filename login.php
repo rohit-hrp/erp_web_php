@@ -9,7 +9,7 @@
     </div>
         <div class="row">
             <div class="col-md-6 mx-auto">
-            <form id="loginForm" method="post" action="/login">
+            <form id="loginForm" method="post" action="/login.php">
                     <!-- Email input -->
                     <div data-mdb-input-init class="form-outline mb-4">
                         <label class="form-label" for="form2Example1">Email address</label>
