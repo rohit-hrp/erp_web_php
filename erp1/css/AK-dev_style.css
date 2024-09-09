@@ -1,0 +1,19 @@
+input.error {
+  border: 2px solid red;
+}
+
+/* Optional: Style the error message */
+label.error {
+  color: red;
+  font-size: 12px;
+}
+
+.required {
+  color: red;
+  /* Make the asterisk red */
+  font-weight: bold;
+  /* Make the asterisk bold */
+  margin-left: 2px;
+  /* Add some space between the label and asterisk */
+}
+
