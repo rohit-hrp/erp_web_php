@@ -2,24 +2,24 @@
 
 <!-- service section -->
 <section class="service_section layout_padding">
-    <div class="container ">
+    <div class="container" style="background-color: #008B8B;">
         <div class="heading_container heading_center">
             <h2> Login </h2>
         </div>
         <div class="row">
             <div class="col-md-6 mx-auto">
-                <form>
+                <form id="loginForm" method="post" action="">
                     <!-- Email input -->
                     <div data-mdb-input-init class="form-outline mb-4">
-                        <label class="form-label" for="form2Example1">Email address:</label>
-                        <input type="email" id="form2Example1" class="form-control" />
+                        <label class="form-label" for="form2Example1">Email address<span class="required">*</span></label>
+                        <input type="email" id="form2Example1" class="form-control" name="emil" placeholder="Please enter your email" />
 
                     </div>
 
                     <!-- Password input -->
                     <div data-mdb-input-init class="form-outline mb-4">
-                        <label class="form-label" for="form2Example2">Password:</label>
-                        <input type="password" id="form2Example2" class="form-control" />
+                        <label class="form-label" for="form2Example2">Password<span class="required">*</span></label>
+                        <input type="password" id="form2Example2" class="form-control" name="password" placeholder="Please enter your password" />
 
                     </div>
 
@@ -35,16 +35,17 @@
 
                         <div class="col">
                             <!-- Simple link -->
-                            <a href="#!">Forgot password?</a>
+                            <a href="#!" style="color: white;">Forgot password?</a>
                         </div>
                     </div>
 
                     <!-- Submit button -->
-                    <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4">Sign in</button>
+                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-block mb-4" style="background-color: #8B0000;">Sign in</button>
 
                     <!-- Register buttons -->
                     <div class="text-center">
-                        <p>Not a member? <a href="signup.php">Register</a></p>
+                        <p>Not a member? <a href="signup.php" style="color: white;">Signup</a></p>
+
                     </div>
                 </form>
             </div>

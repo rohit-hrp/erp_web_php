@@ -25,6 +25,12 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  <link href="css/dev_style.css" rel="stylesheet" />
+  
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <script src="js/validation/auth.js"></script>
+    <script src="js/validation/auth1.js"></script>
 
 </head>
 
