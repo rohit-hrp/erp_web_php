@@ -3,9 +3,9 @@
 class Database {
     private $host = "localhost";
     private $user = "root";
-    private $password = "root";
+    private $password = "";
     private $dbname = "erp";
-    private $conn;
+    public $conn;
 
     public function __construct() {
         // Create a new MySQLi connection
@@ -16,27 +16,41 @@ class Database {
         }
     }
 
-    // Method to execute a query
-    public function query($sql) {
-        $result = $this->conn->query($sql);
+    // Method to execute a query and return the statement object
+    public function query($sql, $types = "", $params = []) {
+        $stmt = $this->conn->prepare($sql);
+        if (!$stmt) {
+            die("Prepare failed: " . $this->conn->error);
+        }
+        if ($types && $params) {
+            $stmt->bind_param($types, ...$params);
+        }
+        if (!$stmt->execute()) {
+            die("Execute failed: " . $stmt->error);
+        }
+        return $stmt;
+    }
 
-        if ($result === FALSE) {
-            echo "Error: " . $this->conn->error;
+    // Method to fetch a single row
+    public function fetch($sql, $types = "", $params = []) {
+        $stmt = $this->query($sql, $types, $params);
+        $result = $stmt->get_result();
+        if ($result) {
+            return $result->fetch_assoc();
         } else {
-            return $result;
+            return null;
         }
     }
 
-    // Method to fetch data
-    public function fetch($sql) {
-        $result = $this->query($sql);
-        return $result->fetch_assoc();
-    }
-
-    // Method to fetch all data
-    public function fetchAll($sql) {
-        $result = $this->query($sql);
-        return $result->fetch_all(MYSQLI_ASSOC);
+    // Method to fetch all rows
+    public function fetchAll($sql, $types = "", $params = []) {
+        $stmt = $this->query($sql, $types, $params);
+        $result = $stmt->get_result();
+        if ($result) {
+            return $result->fetch_all(MYSQLI_ASSOC);
+        } else {
+            return [];
+        }
     }
 
     // Close the connection
@@ -44,19 +58,4 @@ class Database {
         $this->conn->close();
     }
 }
-
-// Usage example
-$db = new Database();
-// Example query
-$sql = "SELECT * FROM users";
-$users = $db->fetchAll($sql);
-
-// Display the users
-// foreach ($users as $user) {
-//     echo $user['name'] . " | ".$user['email']." | ".$user['phone'];
-//     echo "</br>";
-// }
-// Close the connection
-$db->close();
-
 ?>
