@@ -4,6 +4,8 @@ require_once "layouts/header.php";
 require_once "db.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    echo "<pre>";
+    print_r($_POST);die;
 
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -18,9 +20,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "New user added successfully!";
     // Close the connection
     $db->close();
-}
+} 
 
-?>
+?> 
 
 <!-- service section -->
 <section class="service_section layout_padding">
@@ -30,7 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="row">
             <div class="col-md-6 mx-auto">
-                <form id="SignupForm" method="post" action="">
+                <form id="SignupForm" method="post" action=""> 
+                    <!-- <form id="SignupForm" onsubmit="return validateForm()"> -->
                     <!-- Name input -->
                     <div data-mdb-input-init class="form-outline mb-4">
                         <label class="form-label" for="registerName">Name<span class="required">*</span></label>
@@ -61,11 +64,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <!-- Repeat Password input -->
                     <div data-mdb-input-init class="form-outline mb-4">
                         <label class="form-label" for="registerRepeatPassword">Repeat Password<span class="required">*</span></label>
-                        <input type="password" name="confirm_password" id="registerRepeatPassword" class="form-control" placeholder="Please enter your repeat password" />
+                        <input type="password" name="confirm_password" id="registerRepeatPassword" class="form-control" placeholder="Please enter your repeat password" required/>
 
                     </div>
 
-                    <!-- 2 column grid layout for inline styling -->
+                     <!-- 2 column grid layout for inline styling -->
                     <div class="row mb-4">
                         <div class="col d-flex justify-content-center">
                             <!-- Checkbox -->
@@ -87,6 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 </section>
+
 
 <!-- end service section -->
 

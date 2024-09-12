@@ -1,5 +1,4 @@
 <?php
-
 class Database {
     private $host = "localhost";
     private $user = "root";
@@ -19,7 +18,6 @@ class Database {
     // Method to execute a query
     public function query($sql) {
         $result = $this->conn->query($sql);
-
         if ($result === FALSE) {
             echo "Error: " . $this->conn->error;
         } else {
@@ -44,19 +42,4 @@ class Database {
         $this->conn->close();
     }
 }
-
-// Usage example
-$db = new Database();
-// Example query
-$sql = "SELECT * FROM users";
-$users = $db->fetchAll($sql);
-
-// Display the users
-// foreach ($users as $user) {
-//     echo $user['name'] . " | ".$user['email']." | ".$user['phone'];
-//     echo "</br>";
-// }
-// Close the connection
-$db->close();
-
 ?>

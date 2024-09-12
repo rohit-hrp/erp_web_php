@@ -12,7 +12,7 @@
                     <!-- Email input -->
                     <div data-mdb-input-init class="form-outline mb-4">
                         <label class="form-label" for="form2Example1">Email address<span class="required">*</span></label>
-                        <input type="email" id="form2Example1" class="form-control" name="emil" placeholder="Please enter your email" />
+                        <input type="email" id="form2Example1" class="form-control" name="email" placeholder="Please enter your email" />
 
                     </div>
 
